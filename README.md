@@ -37,7 +37,7 @@ L_λ =  ( DN - 1) * UCC
 
 where UCC : Unit Conversion Coefficient (W/m2/sr/um).
 
-UCC gets from this site (p.43) :https://unit.aist.go.jp/igg/rs-rg/ASTERSciWeb_AIST/jp/documnts/users_guide/part1/pdf/Part2_5.1J.pdf
+UCC got from this site (p.43) :https://unit.aist.go.jp/igg/rs-rg/ASTERSciWeb_AIST/jp/documnts/users_guide/part1/pdf/Part2_5.1J.pdf
 
 ## (ii) convert L_λ  to ρ_TOA,λ (TOA radiation) ($ ./radiance2toa.sh).
 
@@ -48,7 +48,7 @@ UCC gets from this site (p.43) :https://unit.aist.go.jp/igg/rs-rg/ASTERSciWeb_AI
 where ρ_TOA,λ:TOA radiation, d:Earth-Sun distance, E_sun,λ:Mean solar exoatmospheric irradiances, θs:Solar zenith angle (deg).
 
 
-d^2 gets from this equation:
+d^2 calced from this equation:
 ```
 d^2 = (1 / (1+0.033 * cos (2π*DOY/365)))
 ```
