@@ -14,14 +14,17 @@ Convert ASTER-VA products as normalized reflectance.
 https://gbank.gsj.jp/madas/map/index.htm://gbank.gsj.jp/madas/map/index.html
 
 ## 2, Extract files and move to the original directory.
- $ make original
- $ for file in `ls *.tar.bz2`; do bzip2 -dc ${file} | tar xvf -; mv ${file} original done
+```
+$ make original
+$ for file in `ls *.tar.bz2`; do bzip2 -dc ${file} | tar xvf -; mv ${file} original done
+```
 
 ## 3, run.
- $ cd src
- $ chmod +x *.sh *.py
- $ ./convert_normalized_reflectance.sh
-
+```
+$ cd src
+$ chmod +x *.sh *.py
+$ ./convert_normalized_reflectance.sh
+```
 Other script will be called by ./convert_normalized_reflectance.sh .
 
 # More details.
