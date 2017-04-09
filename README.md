@@ -11,6 +11,7 @@ Convert ASTER-VA products as normalized reflectance.
 # How to use.
 
 ## 1, Download from MADAS.
+https://gbank.gsj.jp/madas/map/index.htm://gbank.gsj.jp/madas/map/index.html
 
 ## 2, Extract files and move to the original directory.
  $ make original
