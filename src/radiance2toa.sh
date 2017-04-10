@@ -1,6 +1,6 @@
 #!/bin/sh
 # 2016/10/18 Jin Katagi
-# convert radiation to TOA radiation using below equation
+# convert radiance to TOA radiance using below equation
 # rho_TOA = pi * L * d^2 / (E_sun * cos(theta))
 # This script need calc_solar_zenith_angle.py
 
@@ -42,16 +42,16 @@ for scene in `ls original`; do
   output_dir=toa/${scene}
   mkdir -p ${output_dir}
 
-  g.region rast=${scene}_vnir1_radiation
+  g.region rast=${scene}_vnir1_radiance
 
   # check arguments
   echo "doy: ${doy}, gmt: ${gmt}"
   echo "lon: ${lon}, lat: ${lat}"
   echo "theta: ${theta}, d^2: ${d_2}"
   # calc toa
-  r.mapcalc "${scene}_vnir1_toa = if(${scene}_vnir1_radiation != 0, ${pi} * ${scene}_vnir1_radiation  * ${d_2} / (${e_sun_band1} * cos(${theta})), 0)"
-  r.mapcalc "${scene}_vnir2_toa = if(${scene}_vnir2_radiation != 0, ${pi} * ${scene}_vnir2_radiation  * ${d_2} / (${e_sun_band2} * cos(${theta})), 0)"
-  r.mapcalc "${scene}_vnir3n_toa= if(${scene}_vnir3n_radiation != 0, ${pi} * ${scene}_vnir3n_radiation  * ${d_2} / (${e_sun_band3n} * cos(${theta})), 0)"
+  r.mapcalc "${scene}_vnir1_toa = if(${scene}_vnir1_radiance != 0, ${pi} * ${scene}_vnir1_radiance  * ${d_2} / (${e_sun_band1} * cos(${theta})), 0)"
+  r.mapcalc "${scene}_vnir2_toa = if(${scene}_vnir2_radiance != 0, ${pi} * ${scene}_vnir2_radiance  * ${d_2} / (${e_sun_band2} * cos(${theta})), 0)"
+  r.mapcalc "${scene}_vnir3n_toa= if(${scene}_vnir3n_radiance != 0, ${pi} * ${scene}_vnir3n_radiance  * ${d_2} / (${e_sun_band3n} * cos(${theta})), 0)"
 
 
   r.out.gdal input=${scene}_vnir1_toa output=${output_dir}/data1.l3a.vnir1.tif
